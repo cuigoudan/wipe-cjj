@@ -1,0 +1,16 @@
+{
+  "curly": true,
+  "eqeqeq": true,
+  "immed": true,
+  "newcap": true,
+  "noarg": true,
+  "undef": true,
+  "boss": false,
+  "eqnull": true,
+  "node": true,
+  "expr":true,
+  "noempty":true,
+  "regexp":true,
+  "browser":true,
+  "devel":true
+}
