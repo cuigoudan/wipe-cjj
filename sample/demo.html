@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas擦除特效</title>
+	<style>
+		html,body{
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		canvas{
+			border: 1px solid #000;
+			background: url(images/wipe1.jpg) center center;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="cas" width="375" height="667"></canvas>
+	<canvas id="cas1" width="375" height="667"></canvas>
+</body>
+</html>
+<script src="js/swipe-cjj-1.2.1.min.js">
+</script>
+<script>
+var obj = {
+	"id":"cas",//canvas的id
+	"_w":"375",//canvas的宽
+	"_h":"667",//canvas的高
+	"r":"20",//擦除面积半径
+	"coverType":"img",//canvas的覆盖类型，可以有两种取值img或color，img则需在mask中指定图片路径；如果是color则需要在mask中给出颜色值，
+	"mask":"images/wipe2.jpg",//路径或颜色
+	"percent":50,//当透明度超过此处指定的数字，则提示擦除完成
+	callback:wancheng,//用户自定义回调函数名称，
+};
+var obj1 = {
+	"id":"cas1",//canvas的id
+	"_w":"667",//canvas的宽
+	"_h":"667",//canvas的高
+	"r":"20",//擦除面积半径
+	"coverType":"color",//canvas的覆盖类型，可以有两种取值img或color，img则需在mask中指定图片路径；如果是color则需要在mask中给出颜色值，
+	"mask":"red",//路径或颜色
+	"percent":50,//当透明度超过此处指定的数字，则提示擦除完成
+	callback:wancheng,//用户自定义回调函数名称，
+};
+var swipe1 = new Swipe(obj);
+var swipe2 = new Swipe(obj1);
+function wancheng(transPercent){
+	//transPercent 为透明面积占总面积的百分比
+	//擦除完成后用户自己的逻辑
+	alert("查看中奖");
+}
+var reg = /^-\d+\.\d+\.\d+\./g;
+var str = "-1.22.2.";
+console.log(reg.test(str));
+</script>
